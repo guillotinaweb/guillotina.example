@@ -1,0 +1,17 @@
+{
+    "debug": true,
+
+    "address": 8080,
+    "root_user": { "password": "admin" },
+
+    "applications": [
+        "pserver.example"
+    ],
+
+    "databases": [{
+        "zodb": {
+            "storage": "ZODB",
+            "path": "var/Data.fs"
+        }
+    }]
+}
