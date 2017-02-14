@@ -1,7 +1,7 @@
 from plone.server import configure
 from plone.server.behaviors.instance import AnnotationBehavior
 from plone.server.interfaces import IFormFieldProvider, IResource
-from zope.interface import Interface, provider
+from zope.interface import Interface, provider, implementer
 from zope.schema import TextLine
 
 from pserver.example import _
@@ -35,6 +35,10 @@ class IMarkerCustomBehavior(Interface):
 
 
 # this is the actual definition of the behavior!
+# this 'implementer' bit _should_ be automatic, and might be in a future update
+# to plone.server, for now this explicitely states that the behavior implements
+# the ICustomBehavior interface to the system.
+@implementer(ICustomBehavior)
 # SEE: http://ploneserver.readthedocs.io/en/latest/applicationconfiguration.html#behavior
 @configure.behavior(
     title="CustomBehavior",

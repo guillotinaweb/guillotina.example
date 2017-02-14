@@ -12,6 +12,6 @@ def includeme(root):
     # these, basically, load the specified module so that all the
     # decorators activate and configure application in various ways
     # (by defining services, behaviors, contenttypes, etc)
-    configure.scan("pserver.example.contenttypes")
     configure.scan("pserver.example.behaviors")
+    configure.scan("pserver.example.contenttypes")
     configure.scan("pserver.example.services")
