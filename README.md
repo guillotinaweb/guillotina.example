@@ -8,6 +8,8 @@ in the plone.server repo --  it's not affiliated with the project, and is more
 for me to poke around plone.server and to have annotations that are helpful for
 someone not familiar with concepts pervasive in Zope/Plone.
 
+A good starting point for looking at this repo might be the `Makefile` targets.
+
 ## Contributions
 
 If you feel that the content of this repo is misrepresenting something, is
