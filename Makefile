@@ -19,6 +19,8 @@ create_custom_type:
 modify_custom_behavior_content:
 	# this will change the data in the custom behavior for the object created
 	# with the `create_custom_type` target
+	#
+	# For more info about commands, SEE: http://ploneserver.readthedocs.io/en/latest/behavior.html#dynamic-behaviors
 	curl -X PATCH -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"pserver.example.behaviors.ICustomBehavior":{"bar":"changed"}}' "http://127.0.0.1:8080/zodb/plone/customtype1"
 
 .PHONY: bootstrap setup createcustomtype
