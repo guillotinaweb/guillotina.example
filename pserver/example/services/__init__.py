@@ -4,6 +4,7 @@
 # see the aservice.py file for more detailed breakdown of service declaration
 from . import aservice
 from . import customtypeservice
+from . import chainedservice
 
 from plone.server import configure
 from plone.server.api.service import Service

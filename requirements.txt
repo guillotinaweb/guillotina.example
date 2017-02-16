@@ -1,1 +1,5 @@
+# if you want the latest published version:
 plone.server
+
+# if you want the latest version on git master:
+#git+https://github.com/plone/plone.server.git#egg=plone.server
