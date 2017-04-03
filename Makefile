@@ -2,7 +2,7 @@
 
 bootstrap:
 	# directory used for data.fs and related files in this example
-	mkdir var
+	mkdir -p var
 	# install dependencies
 	./env/bin/pip install -r requirements.txt
 	# make sure to install your app into your environment ;)
@@ -23,4 +23,13 @@ modify_custom_behavior_content:
 	# For more info about commands, SEE: http://ploneserver.readthedocs.io/en/latest/behavior.html#dynamic-behaviors
 	curl -X PATCH -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"pserver.example.behaviors.ICustomBehavior":{"bar":"changed"}}' "http://127.0.0.1:8080/zodb/plone/customtype1"
 
-.PHONY: bootstrap setup createcustomtype
+
+# some docker related things to make it quicker to launch
+start_db:
+	docker-compose up -d db
+
+build_and_start_web:
+	docker-compose build web && docker-compose run --no-deps --service-ports --rm web
+
+
+.PHONY: bootstrap setup createcustomtype modify_custom_behavior_content start_db build_and_start_web

@@ -6,16 +6,16 @@ from . import aservice
 from . import customtypeservice
 from . import chainedservice
 
-from plone.server import configure
-from plone.server.api.service import Service
-from plone.server.interfaces import ISite
-from plone.server.browser import Response
+from guillotina import configure
+from guillotina.api.service import Service
+from guillotina.interfaces import IContainer
+from guillotina.browser import Response
 
 
 
 # this is an example of a service with a very custom response.
 @configure.service(
-    context=ISite,
+    context=IContainer,
     name='@exampleservice',
     method='GET',
     permission='plone.AccessPreflight')

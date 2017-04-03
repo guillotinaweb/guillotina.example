@@ -1,8 +1,8 @@
-from plone.server import configure
-from plone.server.api.service import Service
-from plone.server.browser import Response
+from guillotina import configure
+from guillotina.api.service import Service
+from guillotina.browser import Response
 
-from pserver.example.contenttypes import ICustomType
+from example.contenttypes import ICustomType
 
 
 @configure.service(

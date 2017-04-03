@@ -1,13 +1,13 @@
-from plone.server import configure
-from plone.server.api.service import Service
-from plone.server.interfaces import ISite
-from plone.server.browser import Response
+from guillotina import configure
+from guillotina.api.service import Service
+from guillotina.interfaces import IContainer
+from guillotina.browser import Response
 
 # SEE the official services documentation for more info:
-# http://ploneserver.readthedocs.io/en/latest/services.html
+# http://guillotina.readthedocs.io/en/latest/developer/services.html
 #
-# also check out the other services, IE the ones in pserver.example.services.aservice
-# and pserver.example.services.customtypeservice
+# also check out the other services, IE the ones in example.services.aservice
+# and example.services.customtypeservice
 
 # If you want to be able to have 1 function handle more than one HTTP method,
 # it's really simple! Just chain decorators -- and give each method it's own
@@ -16,7 +16,7 @@ from plone.server.browser import Response
 # this decorator is declaring the '@chained' service as a GET allowable
 # by anyone with access to the service
 @configure.service(
-    context=ISite,
+    context=IContainer,
     name='@chained',
     method='GET',
     permission='plone.AccessPreflight')
@@ -33,7 +33,7 @@ from plone.server.browser import Response
 # Alternatively, you don't have to chain _any_ services definitions -- each
 # could be it's very own callable.
 @configure.service(
-    context=ISite,
+    context=IContainer,
     name='@chained',
     method='POST',
     permission='plone.AddContent')

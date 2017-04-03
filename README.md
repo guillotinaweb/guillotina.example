@@ -1,12 +1,13 @@
-# pserver.example
+# Guillotina Example
 
-Just a small example application for [plone.server](https://github.com/plone/plone.server).
+Just a small example application for [guillotina](https://github.com/plone/guillotina).
 
-This example has a slightly different intention than the
-[plone.example](https://github.com/plone/plone.server/tree/master/src/plone.example)
-in the plone.server repo --  it's not affiliated with the project, and is more
-for me to poke around plone.server and to have annotations that are helpful for
-someone not familiar with concepts pervasive in Zope/Plone.
+This project is not affiliated with the project, and is more for me to poke
+around guillotina.
+
+I've tried to do a lot of annotation to this repo to help remind me of what
+certain things are, but also to try and be helpful to other people that may
+be interested in looking around.
 
 A good starting point for looking at this repo might be the `Makefile` targets.
 

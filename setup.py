@@ -1,28 +1,27 @@
 import os
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open('README.md') as readme:
     long_desc = readme.read()
 
-setup(name='pserver_example',
-      version='0.0.1',
-      description='pserver example application',
+setup(name='example',
+      version='1.0.0',
+      description='guillotina example application',
       long_description=long_desc,
       classifiers=[
-          'Programming Language :: Python :: 3.5',
+          'Programming Language :: Python :: 3.6',
           'Topic :: Software Development :: Libraries :: Python Modules',
       ],
-      packages=find_packages(),
-      include_package_data=True,
-      namespace_packages=[
-          'pserver'
+      packages=[
+          'example',
       ],
+      include_package_data=True,
       install_requires=[
-          'plone.server',
+          'guillotina',
       ],
       entry_points={
-          'plone.server': [
-              'include = pserver.example',
+          'guillotina': [
+              'include = example',
           ],
       })

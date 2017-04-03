@@ -1,0 +1,21 @@
+# this compose script is meant JUST for development purposes... 
+# if that wasn't immediately obvious :)
+#
+version: '2'
+services:
+    db:
+        image: postgres
+        environment:
+            - POSTGRES_PASSWORD=postgres
+    web:
+        build: .
+        image: guillotina.example
+        command: guillotina -c /app/config.json
+        volumes:
+            - .:/app
+        ports:
+            - "9080:8080"
+        links:
+            - db
+        depends_on:
+            - db

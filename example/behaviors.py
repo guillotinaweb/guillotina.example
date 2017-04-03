@@ -1,17 +1,17 @@
-from plone.server import configure
-from plone.server.behaviors.instance import AnnotationBehavior
-from plone.server.interfaces import IFormFieldProvider, IResource
+from guillotina import configure
+from guillotina.behaviors.instance import AnnotationBehavior
+from guillotina.interfaces import IFormFieldProvider, IResource
 from zope.interface import Interface, provider, implementer
-from zope.schema import TextLine
+from guillotina.schema import TextLine
 
-from pserver.example import _
+from example import _
 
 
 # behaviors, interfaces, and adapters are all very much linked.
 # SEE: https://zopeinterface.readthedocs.io/en/latest/
 
-# for plone.server specific documentation on behaviors,
-# SEE: http://ploneserver.readthedocs.io/en/latest/behavior.html
+# for guillotina specific documentation on behaviors,
+# SEE: http://guillotina.readthedocs.io/en/latest/developer/behavior.html
 
 
 # This is saying that ICustomBehavior facilitates the IFormFieldProvider
@@ -36,10 +36,10 @@ class IMarkerCustomBehavior(Interface):
 
 # this is the actual definition of the behavior!
 # this 'implementer' bit _should_ be automatic, and might be in a future update
-# to plone.server, for now this explicitely states that the behavior implements
+# to guillotina, for now this explicitely states that the behavior implements
 # the ICustomBehavior interface to the system.
 @implementer(ICustomBehavior)
-# SEE: http://ploneserver.readthedocs.io/en/latest/applicationconfiguration.html#behavior
+# SEE: http://guillotina.readthedocs.io/en/latest/developer/applicationconfiguration.html#behavior
 @configure.behavior(
     title="CustomBehavior",
     # this class definition provides the behavioral implementation of
