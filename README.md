@@ -2,14 +2,10 @@
 
 Just a small example application for [guillotina](https://github.com/plone/guillotina).
 
-This project is not affiliated with the project, and is more for me to poke
-around guillotina.
-
-I've tried to do a lot of annotation to this repo to help remind me of what
-certain things are, but also to try and be helpful to other people that may
-be interested in looking around.
-
 A good starting point for looking at this repo might be the `Makefile` targets.
+
+Most files are annotated to try and help explain things, or at least point a
+reader in the direction of better/more thorough documentation.
 
 ## Contributions
 
