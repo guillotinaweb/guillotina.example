@@ -18,7 +18,7 @@ class ICustomType(IItem):
 
 # SEE: http://guillotina.readthedocs.io/en/latest/developer/applicationconfiguration.html#content-type
 @configure.contenttype(
-    portal_type="CustomType",
+    type_name="CustomType",
     schema=ICustomType,
     # behaviors are a part of a larger subject that includes the concept of
     # Interfaces and Adapters. In this case, you can think of behviors
