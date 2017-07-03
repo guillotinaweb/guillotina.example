@@ -11,18 +11,18 @@ bootstrap:
 
 setup:
 	# create your initial site in the selected database
-	curl -X POST -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"@type": "Site","title": "Plone 1","id": "plone","description": "Description"}' "http://127.0.0.1:8080/db/"
+	curl -X POST -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"@type": "Container","title": "Guillotina 1","id": "guillotina1","description": "Description"}' "http://127.0.0.1:8080/db/"
 
 create_custom_type:
 	# create an object of type CustomType and store it at the root
-	curl -X POST -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"@type":"CustomType","title":"Custom Type 1","id":"customtype1","example.behaviors.ICustomBehavior":{"bar":"changed"}}' "http://127.0.0.1:8080/db/plone/"
+	curl -X POST -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"@type":"CustomType","title":"Custom Type 1","id":"customtype1","example.behaviors.ICustomBehavior":{"bar":"changed"}}' "http://127.0.0.1:8080/db/guillotina1/"
 
 modify_custom_behavior_content:
 	# this will change the data in the custom behavior for the object created
 	# with the `create_custom_type` target
 	#
 	# For more info about commands, SEE: http://guillotina.readthedocs.io/en/latest/developer/behavior.html#dynamic-behaviors
-	curl -X PATCH -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"example.behaviors.ICustomBehavior":{"bar":"changed"}}' "http://127.0.0.1:8080/db/plone/customtype1"
+	curl -X PATCH -H "Accept: application/json" --user root:admin -H "Content-Type: application/json" -d '{"example.behaviors.ICustomBehavior":{"bar":"value is now different"}}' "http://127.0.0.1:8080/db/guillotina1/customtype1"
 
 
 # some docker related things to make it quicker to launch
