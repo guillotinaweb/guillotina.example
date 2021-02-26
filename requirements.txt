@@ -1,6 +1,6 @@
 aio-etcd==0.4.5.0
 aioconsole==0.1.3
-aiohttp==2.2.0
+aiohttp==3.7.4
 async-timeout==1.2.1
 asyncpg==0.11.0
 cffi==1.10.0
